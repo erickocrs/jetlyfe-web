@@ -7,6 +7,7 @@ import logo from './logo.svg';
 import './App.scss';
 import VideoList from './components/VideoList/VideoList';
 import Header from './components/Header/Header';
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 function App() {
   
@@ -84,18 +85,16 @@ const containerScrollHandler = (e) => {
         <div className="App">
           <Header/>
           <div
-          className={`container ${activeClass ? "active" : ""}`}
-          onMouseDown={mouseDownHandler}
-          onScroll={containerScrollHandler}
-          scrollTop={containerScrollTop}
-          scrollLeft={containerScrollLeft}>
-            <div className="container-inside">
-                <VideoList {...videoListFunctions}></VideoList>
-                <VideoList {...videoListFunctions} selected></VideoList>
-                <VideoList {...videoListFunctions}></VideoList>
-                <VideoList {...videoListFunctions}></VideoList>
-                <VideoList {...videoListFunctions}></VideoList>
-            </div>
+          className={`container`}>
+            <ScrollContainer className="scroll-container" vertical={false} hideScrollbars={false}>    
+              <div className="container-inside">
+                  <VideoList {...videoListFunctions}></VideoList>
+                  <VideoList {...videoListFunctions} selected></VideoList>
+                  <VideoList {...videoListFunctions}></VideoList>
+                  <VideoList {...videoListFunctions}></VideoList>
+                  <VideoList {...videoListFunctions}></VideoList>
+              </div>
+            </ScrollContainer>    
           </div>
         </div>
       </PersistGate>

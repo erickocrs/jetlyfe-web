@@ -101,3 +101,45 @@ video{
     opacity: 1;
 }
     
+.video-player{
+    &::-webkit-media-controls-panel {
+    display: none;
+    -webkit-appearance: none;
+    }
+    &::-webkit-media-controls-play-button {
+    display: none;
+    -webkit-appearance: none;
+    }
+    &::-webkit-media-controls-start-playback-button {
+    display: none;
+    -webkit-appearance: none
+    }
+
+    &::-webkit-media-controls {
+    display: none;
+    -webkit-appearance: none;
+    }
+}
+
+.video-preview{
+    position:absolute;
+    display:block;
+    float:none;
+    
+    top:0; left:0;
+
+    width:100%;
+    height:auto;
+    min-height: 100%;
+    padding:0px 0;
+
+    
+    opacity:0;
+    transition:all 200ms ease;
+
+    background:rgba(0,0,0,0.5);
+
+    &.previewOn{
+        opacity:1;
+    }
+}
