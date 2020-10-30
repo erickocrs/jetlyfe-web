@@ -67,7 +67,8 @@ class VideoList extends Component {
                         <VideoPlayer 
                             {...this.props}
                             videoList={ this }
-                            videoUrl="./videos/Alpha Blondy - Coco de Rasta.mp4"     
+                            videoUrl="./videos/Alpha Blondy - Coco de Rasta.mp4"      
+                            videoPosterUrl="./videos/cocoderasta.png"
                             
                         ></VideoPlayer>
                         <VideoPlayer 
