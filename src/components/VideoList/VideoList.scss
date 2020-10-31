@@ -3,16 +3,21 @@
   float: left;
   display:block;
   width:20vw;
+  height: 100%;
   clear:right;
   
   border-top:0;
   border-bottom:0;
   margin:0 0px;
 
-  padding-top:30px;
   overflow: hidden;
   transition: all 300ms ease;
   scroll-behavior: smooth;
+}
+.selected-video-list{
+  width:55vw;
+  transition: all 300ms ease;
+
 }
 
 .videolist-box{
@@ -20,11 +25,11 @@
   display:block;
   float:left;
 
-  width:calc(100% + 20px);
-  //overflow: auto;
-  height: 100vh;
+  width:100%;
+  height: auto;
   transition: all 300ms ease;
-  scroll-behavior: smooth;
+  border-bottom: 10px solid #1e1e1e;
+  padding-top:30px;
 }
 
 .video-list-title{
@@ -53,8 +58,8 @@
   transition: all 300ms ease;
 }
 
-.selected-video-list{
-  width:55vw;
-  transition: all 300ms ease;
 
+.container-lists{
+  width:2000vw;
+  height: 100%;
 }

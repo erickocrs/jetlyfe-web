@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-    position:absolute;
+    position:relative;
     display:block;
-    float:none;
-    
-    top:0; left:0;
+    float:left;
 
     width:100%;
     height:40px;

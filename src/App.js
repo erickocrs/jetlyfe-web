@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "./store";
+import React, { useEffect } from 'react'
+import { Provider } from "react-redux"
+import { PersistGate } from "redux-persist/integration/react"
+import { store, persistor } from "./store"
+import ScrollSauce from './components/ScrollSauce/ScrollSauce'
 
-import logo from './logo.svg';
-import './App.scss';
-import VideoList from './components/VideoList/VideoList';
-import Header from './components/Header/Header';
-import ScrollContainer from 'react-indiana-drag-scroll'
+import logo from './logo.svg'
+import './App.scss'
+import VideoList from './components/VideoList/VideoList'
+import Header from './components/Header/Header'
 
 function App() {
   
@@ -86,15 +86,18 @@ const containerScrollHandler = (e) => {
           <Header/>
           <div
           className={`container`}>
-            <ScrollContainer className="scroll-container" vertical={false} hideScrollbars={false}>    
-              <div className="container-inside">
+            <ScrollSauce
+              vertical={false}
+              horizontal={true}>
+                <div
+                className={`container-lists`}>
                   <VideoList {...videoListFunctions}></VideoList>
                   <VideoList {...videoListFunctions} selected></VideoList>
                   <VideoList {...videoListFunctions}></VideoList>
                   <VideoList {...videoListFunctions}></VideoList>
                   <VideoList {...videoListFunctions}></VideoList>
-              </div>
-            </ScrollContainer>    
+                </div>
+            </ScrollSauce> 
           </div>
         </div>
       </PersistGate>

@@ -3,6 +3,7 @@ import './VideoPlayer.scss';
 import { VideoShadow } from './VideoPlayer.styles.js';
 import styled from 'styled-components'
 import enableInlineVideo from 'iphone-inline-video';
+import VideoImagePreview from './VideoImagePreview/VideoImagePreview';
 
 class VideoPlayer extends Component {
         
@@ -57,20 +58,18 @@ class VideoPlayer extends Component {
         return (
             <div
                 ref={this.videoTag}
-                className="video"
+                className="video-container"
                 onClick={this.videoClickHandler}>
                 <video
                     ref={this.videoEl}
                     src={process.env.PUBLIC_URL + this.props.videoUrl}
-                    className="video-player"
+                    className={`video-player ${ this.playing ? "playing" : ""}`}
                     playsinline
                     controls="false">
                 </video>
-                { this.props.videoPosterUrl ?
-                    <img
-                        className={`video-preview ${ this.state.previewStatus ? "previewOn" : ""}`}
-                        src={process.env.PUBLIC_URL + this.props.videoPosterUrl}/>
-                : null }
+                <VideoImagePreview
+                    previewOn={this.state.previewStatus}
+                    videoPosterUrl={this.props.videoPosterUrl}/>
                 <VideoShadow shadowOn={this.state.previewStatus}/>
                 <div className="video-list-description">                    
                     <h4 className="video-title">21 Savage - Bank Account</h4>

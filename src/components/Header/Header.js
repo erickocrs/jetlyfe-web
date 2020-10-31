@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-            <Logo href="./">JEHT</Logo>
+            <Logo href="./">jetLyfe</Logo>
             <Search>
                 <InputSearch type="text"/>
                 <ButtonSearch/>  
