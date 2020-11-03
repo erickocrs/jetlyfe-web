@@ -10,12 +10,11 @@ export const ScrollSauce = (props) => {
                 horizontal={props.horizontal}
                 vertical={props.vertical}>
                 <ScrollContainer
-                    className="scroll-container scroll-container-list"
+                    className={`scroll-container scroll-container-list ${props.vertical ? "scroll-vertical" : "" }`}
                     horizontal={props.horizontal}
                     vertical={props.vertical}
                     hideScrollbars={false}
-                    activationDistance={1}
-                    nativeMobileScroll={true}>
+                    nativeMobileScroll={false}>
                         {props.children}
                 </ScrollContainer>
             </ScrollContainerBox>
@@ -32,6 +31,13 @@ const ScrollContainerCrop = styled.div`
 const ScrollContainerBox = styled.div`
     width:${props => ( props.vertical ? "calc(100% + 20px)" : "100%" )};
     height:${props => ( props.horizontal ? "calc(100% + 20px)" : "100%" )};
+
+    @media (max-width: 768px) {
+        width:100%;
+        height:100%;
+    }
+
+    
 `;
 
 

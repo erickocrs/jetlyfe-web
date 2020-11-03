@@ -14,8 +14,6 @@ class VideoList extends Component {
     
     constructor(props){
         super(props);
-        console.log("this");
-        console.log(props);
 
         if(props.selected === true)
         {
@@ -58,14 +56,18 @@ class VideoList extends Component {
                         <VideoPlayer 
                             {...this.props}
                             videoList={ this }
+                            videoTitle="21 Savage - Bank Account"
                             videoUrl="./videos/21 Savage - Bank Account (Official Audio).mp4"           
-                            videoPosterUrl="./videos/21 Savage - Bank Account (Official Audio).png" >                                    
+                            videoPosterUrl="./videos/21 Savage - Bank Account (Official Audio).png" 
+                            views="200">
                         </VideoPlayer>
                         <VideoPlayer 
                             {...this.props}
                             videoList={ this }
+                            videoTitle="Alpha Blondy - Coco de Rasta"
                             videoUrl="./videos/Alpha Blondy - Coco de Rasta.mp4"      
-                            videoPosterUrl="./videos/cocoderasta.png"                            
+                            videoPosterUrl="./videos/cocoderasta.png"       
+                            views="500"                     
                         ></VideoPlayer>
                         <VideoPlayer 
                             {...this.props}

@@ -20,9 +20,16 @@ export const Logo = styled.a`
     display:block;    
     
     text-decoration:none;    
-    padding:5px;
+    padding:0px;
     font-size:12px;
     color:rgba(255,255,255,.7);
+
+`;
+
+export const LogoImage = styled.img`
+    position:relative;  
+    width:60px;
+    margin:9px 0 0 15px
 `;
 
 const SearchHeight = "40px";

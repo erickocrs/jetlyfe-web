@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {
     HeaderContainer,
     Logo,
+    LogoImage,
     Search,
     ButtonSearch,
     InputSearch
@@ -12,7 +13,9 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-            <Logo href="./">jetLyfe</Logo>
+            <Logo href="./">
+                <LogoImage src={"./logo.svg"}></LogoImage>
+            </Logo>
             <Search>
                 <InputSearch type="text"/>
                 <ButtonSearch/>  
