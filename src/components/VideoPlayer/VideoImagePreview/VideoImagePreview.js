@@ -3,12 +3,10 @@ import styled from 'styled-components';
 
 export const VideoImagePreview = (props) => {
     return (
-        props.videoPosterUrl ?
-            <ImagePreview
-                previewOn={props.previewOn}
-                videoPosterUrl={props.videoPosterUrl}>
-            </ImagePreview>
-        : null
+        <ImagePreview
+            previewOn={props.previewOn}
+            videoPosterUrl={props.videoPosterUrl}>
+        </ImagePreview>
     )
 }
 
@@ -26,7 +24,7 @@ const ImagePreview = styled.div`
 
     transition:all 2000ms ease;
 
-    background:rgba(0,0,0,0.5) no-repeat center center;
+    background:rgba(29,29,29,1) no-repeat center center;
     background-image : ${(props) => (`url('${ ( process.env.PUBLIC_URL + props.videoPosterUrl ) }')`)};
     background-size:cover;
     opacity:${(props) => props.previewOn ? 1 : 0};

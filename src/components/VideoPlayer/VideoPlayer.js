@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './VideoPlayer.scss';
 import styled from 'styled-components'
 import VideoImagePreview from './VideoImagePreview/VideoImagePreview';
+import VideoPreLoader from './VideoPreLoader/VideoPreLoader';
 
 class VideoPlayer extends Component {
         
@@ -35,15 +36,6 @@ class VideoPlayer extends Component {
     }
 
     playVideo = (data) => {
-
-        if(data && data.goingToFullScreen)
-        {
-            //this.setState({previewStatus:true, videoStatus:true});    
-        }
-        else
-        {
-            //this.setState({previewStatus:false, videoStatus:true});
-        }
         this.setState({previewStatus:false, videoStatus:true});
         
         let currentVideo = this.props.getCurrentVideoPlaying();
@@ -105,13 +97,6 @@ class VideoPlayer extends Component {
     videoClickHandler = (e) => {
         e.preventDefault();
 
-        console.log("document", document);
-        console.log("window", window);
-        console.log("document.fullscreen", document.fullscreen);
-        console.log("document.fullscreenElement", document.fullscreenElement);
-        console.log("document.fullscreenEnabled", document.fullscreenEnabled);
-        
-
         if(!this.isInFullScreen())//If is not in full screen any more
         {
             this.fullScreenMode = false;
@@ -132,7 +117,7 @@ class VideoPlayer extends Component {
                 const _this = this;
                 setTimeout(() => {
                     _this.doubleTap = false;
-                },1000);
+                },500);
                 
             }            
             else//If is DoubleTap
@@ -147,9 +132,9 @@ class VideoPlayer extends Component {
                 {
                     video.webkitEnterFullscreen();
                 }
-                this.fullScreenMode = true;                
+                this.fullScreenMode = true;
                 this.playVideo({goingToFullScreen: true});
-                        
+                
                 const _this = this;
                 document.addEventListener("fullscreenchange", () => {_this.exitFullScreenMode()});
                 document.addEventListener("mozfullscreenchange", () => {_this.exitFullScreenMode()});
@@ -159,11 +144,9 @@ class VideoPlayer extends Component {
                 video.addEventListener("mozfullscreenchange", () => {_this.exitFullScreenMode()});
                 video.addEventListener("webkitfullscreenchange", () => {_this.exitFullScreenMode()});
                 video.addEventListener("webkitendfullscreen", () => {_this.exitFullScreenMode()});
-                
             }
         }
     }
-
 
     exitFullScreenMode = () => {
         
@@ -193,6 +176,7 @@ class VideoPlayer extends Component {
                 className="video-box"
                 onClick={this.videoClickHandler}
                 boxRatio={this.state.boxRatio}>
+                <VideoPreLoader/>
                 <video
                     ref={this.videoEl}
                     src={process.env.PUBLIC_URL + this.props.videoUrl}
@@ -205,32 +189,33 @@ class VideoPlayer extends Component {
                     playsInline={true}
                     onCanPlay={this.videoOnCanPlayHandler}
                     onPlay={this.videoOnPlayHandler}
+                    onPause={this.videoOnPauseHandler}
                     onfullscreenchange={this.exitFullScreenMode}
                     onmozfullscreenchange={this.exitFullScreenMode}
                     onwebkitfullscreenchange={this.exitFullScreenMode}
                     onwebkitendfullscreen={this.exitFullScreenMode}
-                    onClick={this.videonOnHandler}
-                    onPause={this.videoOnPauseHandler}
                     >
-                </video>
+                </video>                
                 <VideoImagePreview
                     previewOn={this.state.previewStatus}
                     videoPosterUrl={this.props.videoPosterUrl}/>
                 <VideoShadow
                     className="video-shadow"
                     shadowOn={this.state.previewStatus}/>
-                <div
+                <VideoDescription
                     className={`video-list-description ${ this.state.previewStatus ? "" : "description-off" }`}>
                     <h4 className="video-title">{this.props.videoTitle}</h4>
                     <h5 className="video-views">{this.props.views} visualizações</h5>
                     <div className="btn-like"></div>
                     <div className="btn-comment"></div>
                     <div className="btn-play"></div>                        
-                </div>
+                </VideoDescription>
             </VideoBox>
         )
     }
 };
+
+const VideoDescription = styled.div``;
 
 const VideoBox = styled.div`
     padding-bottom:${ props => (props.boxRatio ? (( props.boxRatio * 100 ) + "%") : "56.25%" ) };
@@ -239,5 +224,4 @@ const VideoBox = styled.div`
 const VideoShadow = styled.div`
     opacity:${props => props.shadowOn? 1: 0};
 `;
-
 export default VideoPlayer;
