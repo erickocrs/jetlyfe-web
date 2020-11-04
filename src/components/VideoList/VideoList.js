@@ -14,17 +14,15 @@ class VideoList extends Component {
     
     constructor(props){
         super(props);
-
         if(props.selected === true)
-        {
-            this.setSelected(true);
-        }
+        { this.setSelected(true); }
     }
 
     setSelected(isConstructing){                
 
         //If is Creating List
-        if(isConstructing === true) {
+        if(isConstructing === true)
+        {
             this.state.selectedClass = "selected-video-list";      
         }
         //Updating List
@@ -44,7 +42,6 @@ class VideoList extends Component {
     unsetSelect(){  
         this.setState({selectedClass : ""}) 
     }
-
     
     render(){
         return (        
@@ -61,46 +58,6 @@ class VideoList extends Component {
                             videoPosterUrl="./videos/21 Savage - Bank Account (Official Audio).png" 
                             views="200">
                         </VideoPlayer>
-                        <VideoPlayer 
-                            {...this.props}
-                            videoList={ this }
-                            videoTitle="Alpha Blondy - Coco de Rasta"
-                            videoUrl="./videos/Alpha Blondy - Coco de Rasta.mp4"      
-                            videoPosterUrl="./videos/cocoderasta.png"       
-                            views="500"                     
-                        ></VideoPlayer>
-                        <VideoPlayer 
-                            {...this.props}
-                            videoList={ this }
-                            videoUrl="./videos/y2mate.com - PSY-TRANCE ◉ KOVA & Coblan - Barabana_c2pz71qnTmQ_1080p.mp4"          
-                        ></VideoPlayer>
-                        <VideoPlayer 
-                            {...this.props}
-                            videoList={ this }
-                            videoUrl="./videos/Marcelo D2 - 1967.mp4"                    
-                        ></VideoPlayer>
-                        <VideoPlayer 
-                            {...this.props}
-                            videoList={ this }
-                            videoUrl="./videos/21 Savage - Bank Account (Official Audio).mp4"           
-                            videoPosterUrl="./videos/21 Savage - Bank Account (Official Audio).png" >                                    
-                        </VideoPlayer>
-                        <VideoPlayer 
-                            {...this.props}
-                            videoList={ this }
-                            videoUrl="./videos/Alpha Blondy - Coco de Rasta.mp4"      
-                            videoPosterUrl="./videos/cocoderasta.png"                            
-                        ></VideoPlayer>
-                        <VideoPlayer 
-                            {...this.props}
-                            videoList={ this }
-                            videoUrl="./videos/y2mate.com - PSY-TRANCE ◉ KOVA & Coblan - Barabana_c2pz71qnTmQ_1080p.mp4"          
-                        ></VideoPlayer>
-                        <VideoPlayer 
-                            {...this.props}
-                            videoList={ this }
-                            videoUrl="./videos/Marcelo D2 - 1967.mp4"                    
-                        ></VideoPlayer>
                     </div>   
                     <h3 className="video-list-title">#trance</h3>
                 </ScrollSauce>

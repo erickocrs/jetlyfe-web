@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './VideoPlayer.scss';
 import styled from 'styled-components'
 import VideoImagePreview from './VideoImagePreview/VideoImagePreview';
 import VideoPreLoader from './VideoPreLoader/VideoPreLoader';
+import './VideoPlayer.scss';
 
 class VideoPlayer extends Component {
         
@@ -43,8 +43,7 @@ class VideoPlayer extends Component {
         this.props.videoList.setSelected();
         if(currentVideo)
         {
-            currentVideo.videoEl.current.pause();
-            currentVideo.playing = false;
+            currentVideo.pauseVideo();
         }
         if(!data || (data && !data.alredyFullScreen))
         {
@@ -67,6 +66,7 @@ class VideoPlayer extends Component {
         }
         this.props.setCurrentVideoPlaying(null);
         this.playing = false;
+        document.title = "jLyfe";
     }
 
     videoOnCanPlayHandler = (a,b,c) => {
@@ -97,13 +97,14 @@ class VideoPlayer extends Component {
     videoClickHandler = (e) => {
         e.preventDefault();
 
-        if(!this.isInFullScreen())//If is not in full screen any more
+        if(this.fullScreenMode && !this.isInFullScreen())//If is not in full screen any more
         {
             this.fullScreenMode = false;
         }
         
         if(!this.fullScreenMode) 
         {
+            //If is NORMAL PLAY
             if(!this.doubleTap)
             {
                 //PLAY
@@ -169,6 +170,10 @@ class VideoPlayer extends Component {
             }
         }
     }
+
+    videoOnEnded = () => {
+        console.log("teste");
+    }
     
     render(){
         return (
@@ -190,10 +195,7 @@ class VideoPlayer extends Component {
                     onCanPlay={this.videoOnCanPlayHandler}
                     onPlay={this.videoOnPlayHandler}
                     onPause={this.videoOnPauseHandler}
-                    onfullscreenchange={this.exitFullScreenMode}
-                    onmozfullscreenchange={this.exitFullScreenMode}
-                    onwebkitfullscreenchange={this.exitFullScreenMode}
-                    onwebkitendfullscreen={this.exitFullScreenMode}
+                    onEnded={this.videoOnEnded}
                     >
                 </video>                
                 <VideoImagePreview
