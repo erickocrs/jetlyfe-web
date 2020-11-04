@@ -22,12 +22,8 @@ class VideoPlayer extends Component {
 
     isInFullScreen = () => {
         let isFullScreen = false;
-        /*
-        if( window.innerHeight == window.screen.height)
-        {
-            isFullScreen = true;
-        }
-        */
+        /*if( window.innerHeight == window.screen.height)
+        {isFullScreen = true;}*/        
         if(document.fullscreenElement)
         {
             isFullScreen = true;
@@ -118,9 +114,8 @@ class VideoPlayer extends Component {
                 const _this = this;
                 setTimeout(() => {
                     _this.doubleTap = false;
-                },500);
-                
-            }            
+                },500);                
+            }
             else//If is DoubleTap
             {
                 this.doubleTap = false;            
@@ -134,7 +129,10 @@ class VideoPlayer extends Component {
                     video.webkitEnterFullscreen();
                 }
                 this.fullScreenMode = true;
+                
+                if(this.playing === false){
                 this.playVideo({goingToFullScreen: true});
+                }
                 
                 const _this = this;
                 document.addEventListener("fullscreenchange", () => {_this.exitFullScreenMode()});
@@ -205,7 +203,9 @@ class VideoPlayer extends Component {
                     className="video-shadow"
                     shadowOn={this.state.previewStatus}/>
                 <VideoDescription
-                    className={`video-list-description ${ this.state.previewStatus ? "" : "description-off" }`}>
+                    className={`
+                        video-list-description
+                        ${ this.state.previewStatus ? "" : "description-off" }`}>
                     <h4 className="video-title">{this.props.videoTitle}</h4>
                     <h5 className="video-views">{this.props.views} visualizações</h5>
                     <div className="btn-like"></div>
@@ -226,4 +226,5 @@ const VideoBox = styled.div`
 const VideoShadow = styled.div`
     opacity:${props => props.shadowOn? 1: 0};
 `;
+
 export default VideoPlayer;

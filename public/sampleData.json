@@ -1,0 +1,287 @@
+{
+    "lists" : [
+        {
+            "tag" : "#trap#trance",
+            "list" : [
+                {
+                    "videoTitle": "Chorão & Sabotage - Cantando pro Santo [ETERNOS]",
+                    "videoUrl" : "./videos/Chorão & Sabotage - Cantando pro Santo [ETERNOS].mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jaden Smith - GHOST ft. Christian Rich (Official Video)",
+                    "videoUrl" : "./videos/Jaden Smith - GHOST ft. Christian Rich (Official Video).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "A$AP Rocky - A$AP Forever (Official Video) ft. Moby",
+                    "videoUrl" : "./videos/A$AP Rocky - A$AP Forever (Official Video) ft. Moby.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd",
+                    "videoUrl" : "./videos/Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Ian Dury - Sex & Drugs & Rock & Roll",
+                    "videoUrl" : "./videos/Ian Dury - Sex & Drugs & Rock & Roll.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Willow Smith - Jimi",
+                    "videoUrl" : "./videos/Willow Smith - Jimi.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial)",
+                    "videoUrl" : "./videos/Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                }
+            ]
+        },
+        {
+            "tag" : "#trap#trance",
+            "list" : [
+                {
+                    "videoTitle": "21 Savage - Bank Account",
+                    "videoUrl" : "./videos/21 Savage - Bank Account (Official Audio).mp4",
+                    "videoPosterUrl" : "./videos/21 Savage - Bank Account (Official Audio).png",
+                    "views" : "200"
+                },
+                {
+                    "videoTitle": "Alpha Blondy - Coco de Rasta",
+                    "videoUrl" : "./videos/Alpha Blondy - Coco de Rasta.mp4",
+                    "videoPosterUrl" : "./videos/cocoderasta.png",
+                    "views" : "500"
+                },
+                {
+                    "videoTitle": "Chorão & Sabotage - Cantando pro Santo [ETERNOS]",
+                    "videoUrl" : "./videos/Chorão & Sabotage - Cantando pro Santo [ETERNOS].mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jaden Smith - GHOST ft. Christian Rich (Official Video)",
+                    "videoUrl" : "./videos/Jaden Smith - GHOST ft. Christian Rich (Official Video).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "A$AP Rocky - A$AP Forever (Official Video) ft. Moby",
+                    "videoUrl" : "./videos/A$AP Rocky - A$AP Forever (Official Video) ft. Moby.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd",
+                    "videoUrl" : "./videos/Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Ian Dury - Sex & Drugs & Rock & Roll",
+                    "videoUrl" : "./videos/Ian Dury - Sex & Drugs & Rock & Roll.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Willow Smith - Jimi",
+                    "videoUrl" : "./videos/Willow Smith - Jimi.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial)",
+                    "videoUrl" : "./videos/Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                }
+            ]
+        },
+        {
+            "tag" : "#trap#trance",
+            "list" : [
+                {
+                    "videoTitle": "21 Savage - Bank Account",
+                    "videoUrl" : "./videos/21 Savage - Bank Account (Official Audio).mp4",
+                    "videoPosterUrl" : "./videos/21 Savage - Bank Account (Official Audio).png",
+                    "views" : "200"
+                },
+                {
+                    "videoTitle": "Alpha Blondy - Coco de Rasta",
+                    "videoUrl" : "./videos/Alpha Blondy - Coco de Rasta.mp4",
+                    "videoPosterUrl" : "./videos/cocoderasta.png",
+                    "views" : "500"
+                },
+                {
+                    "videoTitle": "Chorão & Sabotage - Cantando pro Santo [ETERNOS]",
+                    "videoUrl" : "./videos/Chorão & Sabotage - Cantando pro Santo [ETERNOS].mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jaden Smith - GHOST ft. Christian Rich (Official Video)",
+                    "videoUrl" : "./videos/Jaden Smith - GHOST ft. Christian Rich (Official Video).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "A$AP Rocky - A$AP Forever (Official Video) ft. Moby",
+                    "videoUrl" : "./videos/A$AP Rocky - A$AP Forever (Official Video) ft. Moby.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd",
+                    "videoUrl" : "./videos/Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Ian Dury - Sex & Drugs & Rock & Roll",
+                    "videoUrl" : "./videos/Ian Dury - Sex & Drugs & Rock & Roll.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Willow Smith - Jimi",
+                    "videoUrl" : "./videos/Willow Smith - Jimi.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial)",
+                    "videoUrl" : "./videos/Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                }
+            ]
+        },
+        {
+            "tag" : "#trap#trance",
+            "list" : [
+                {
+                    "videoTitle": "21 Savage - Bank Account",
+                    "videoUrl" : "./videos/21 Savage - Bank Account (Official Audio).mp4",
+                    "videoPosterUrl" : "./videos/21 Savage - Bank Account (Official Audio).png",
+                    "views" : "200"
+                },
+                {
+                    "videoTitle": "Alpha Blondy - Coco de Rasta",
+                    "videoUrl" : "./videos/Alpha Blondy - Coco de Rasta.mp4",
+                    "videoPosterUrl" : "./videos/cocoderasta.png",
+                    "views" : "500"
+                },
+                {
+                    "videoTitle": "Chorão & Sabotage - Cantando pro Santo [ETERNOS]",
+                    "videoUrl" : "./videos/Chorão & Sabotage - Cantando pro Santo [ETERNOS].mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jaden Smith - GHOST ft. Christian Rich (Official Video)",
+                    "videoUrl" : "./videos/Jaden Smith - GHOST ft. Christian Rich (Official Video).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "A$AP Rocky - A$AP Forever (Official Video) ft. Moby",
+                    "videoUrl" : "./videos/A$AP Rocky - A$AP Forever (Official Video) ft. Moby.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd",
+                    "videoUrl" : "./videos/Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Ian Dury - Sex & Drugs & Rock & Roll",
+                    "videoUrl" : "./videos/Ian Dury - Sex & Drugs & Rock & Roll.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Willow Smith - Jimi",
+                    "videoUrl" : "./videos/Willow Smith - Jimi.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial)",
+                    "videoUrl" : "./videos/Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                }
+            ]
+        },
+        {
+            "tag" : "#trap#trance",
+            "list" : [
+                {
+                    "videoTitle": "21 Savage - Bank Account",
+                    "videoUrl" : "./videos/21 Savage - Bank Account (Official Audio).mp4",
+                    "videoPosterUrl" : "./videos/21 Savage - Bank Account (Official Audio).png",
+                    "views" : "200"
+                },
+                {
+                    "videoTitle": "Alpha Blondy - Coco de Rasta",
+                    "videoUrl" : "./videos/Alpha Blondy - Coco de Rasta.mp4",
+                    "videoPosterUrl" : "./videos/cocoderasta.png",
+                    "views" : "500"
+                },
+                {
+                    "videoTitle": "Chorão & Sabotage - Cantando pro Santo [ETERNOS]",
+                    "videoUrl" : "./videos/Chorão & Sabotage - Cantando pro Santo [ETERNOS].mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jaden Smith - GHOST ft. Christian Rich (Official Video)",
+                    "videoUrl" : "./videos/Jaden Smith - GHOST ft. Christian Rich (Official Video).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "A$AP Rocky - A$AP Forever (Official Video) ft. Moby",
+                    "videoUrl" : "./videos/A$AP Rocky - A$AP Forever (Official Video) ft. Moby.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd",
+                    "videoUrl" : "./videos/Swae Lee - Hurt To Look (Audio) ft. Rae Sremmurd.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Ian Dury - Sex & Drugs & Rock & Roll",
+                    "videoUrl" : "./videos/Ian Dury - Sex & Drugs & Rock & Roll.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Willow Smith - Jimi",
+                    "videoUrl" : "./videos/Willow Smith - Jimi.mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                },
+                {
+                    "videoTitle": "Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial)",
+                    "videoUrl" : "./videos/Jé Santiago - FLOW DJAVAN (Vídeoclipe Oficial).mp4",
+                    "videoPosterUrl" : "",
+                    "views" : "100"
+                }
+            ]
+        }
+    ]
+}

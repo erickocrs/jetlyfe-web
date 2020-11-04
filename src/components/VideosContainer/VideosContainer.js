@@ -20,6 +20,29 @@ const VideosContainer = () => {
       getCurrentListPlaying 
     }
 
+    React.useEffect(() => {
+      
+      loadVideosLists();
+
+      return () => {
+        //cleanup
+      }
+    }, []);
+
+    const [videosLists, setVideosLists] = React.useState([]);
+
+    const loadVideosLists = () => {
+      fetch('/sampleData.json')
+      .then(function(response) {
+        response.json().then(data => {
+
+          setVideosLists(data.lists);
+          // do something with your data
+          console.log(data);
+        });
+      })
+    }
+
     return (
         <div
         className={`container`}>
@@ -28,11 +51,14 @@ const VideosContainer = () => {
             horizontal={true}>
               <div
               className={`container-lists`}>
-                <VideoList {...videoListFunctions}></VideoList>
-                <VideoList {...videoListFunctions} selected></VideoList>
-                <VideoList {...videoListFunctions}></VideoList>
-                <VideoList {...videoListFunctions}></VideoList>
-                <VideoList {...videoListFunctions}></VideoList>
+                { videosLists.map((videoList, i) => {
+                  return (
+                    <VideoList
+                      {...videoListFunctions}
+                      videoListArray={videoList}
+                      selected={i === 1 ? true : false }/>
+                  );
+                }) }
               </div>
           </ScrollSauce>
         </div>

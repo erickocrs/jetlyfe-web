@@ -16,6 +16,7 @@ class VideoList extends Component {
         super(props);
         if(props.selected === true)
         { this.setSelected(true); }
+        console.log(props);
     }
 
     setSelected(isConstructing){                
@@ -50,14 +51,17 @@ class VideoList extends Component {
                     vertical={true}
                     horizontal={false}>         
                     <div ref={this.videoList}  className="videolist-box">
-                        <VideoPlayer 
-                            {...this.props}
-                            videoList={ this }
-                            videoTitle="21 Savage - Bank Account"
-                            videoUrl="./videos/21 Savage - Bank Account (Official Audio).mp4"           
-                            videoPosterUrl="./videos/21 Savage - Bank Account (Official Audio).png" 
-                            views="200">
-                        </VideoPlayer>
+                        { this.props.videoListArray ? this.props.videoListArray.list.map((videoItem,i) => {
+                            return (
+                            <VideoPlayer 
+                                {...this.props}
+                                videoList={ this }
+                                videoTitle={videoItem.videoTitle}
+                                videoUrl={videoItem.videoUrl}
+                                videoPosterUrl={videoItem.videoPosterUrl}
+                                views={videoItem.views}/>
+                            )})
+                        : null }
                     </div>   
                     <h3 className="video-list-title">#trance</h3>
                 </ScrollSauce>
