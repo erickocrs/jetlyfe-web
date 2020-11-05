@@ -6,8 +6,8 @@ import './VideosContainer.scss';
 
 const VideosContainer = () => {
 
-  const [videosLists, setVideosLists] = React.useState([]);
-  const [containerWidth, setContainerWidth] = React.useState(null);
+    const [videosLists, setVideosLists] = React.useState([]);
+    const [containerWidth, setContainerWidth] = React.useState(null);
 
     let currentVideoPlaying = false;
     const setCurrentVideoPlaying = (newVideo) => {currentVideoPlaying = newVideo;}

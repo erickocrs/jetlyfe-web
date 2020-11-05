@@ -4,7 +4,11 @@
 
 [||||||] get tag from json
 
-[||||--] video controls (progress bar)
+[|||||-] video controls
+
+[------] video on ended play the next
+
+[------] video details on mobile (small text)
 
 [------] `system` video crud (tags)
 
@@ -16,11 +20,13 @@
 
 [------] `system` users (login, register)
 
+[------] url
+
 [------] logo
 
 [------] search
 
-[------] browser zoom (ctr +) bug
+[------] `bug` browser zoom (ctr +)
 
 [------] ...
 
@@ -34,7 +40,6 @@
 
 
 
-########################################################
 ## React ##
 ########################################################
 

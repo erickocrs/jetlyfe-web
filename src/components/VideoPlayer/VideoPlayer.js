@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import VideoImagePreview from './VideoImagePreview/VideoImagePreview';
 import VideoPreLoader from './VideoPreLoader/VideoPreLoader';
+import VideoProgressBar from './VideoProgressBar/VideoProgressBar';
+
 import './VideoPlayer.scss';
 
 class VideoPlayer extends Component {
@@ -9,6 +11,7 @@ class VideoPlayer extends Component {
     videoTag = React.createRef();
     videoEl = React.createRef();
     playing = false;
+    
 
     constructor(props) {
         super(props);
@@ -16,7 +19,8 @@ class VideoPlayer extends Component {
             previewStatus: true,
             videoStatus: false,
             boxRatio : null,
-            teste : "0"
+            teste : "0",
+            timePercent : 0
         };
     }
 
@@ -155,7 +159,7 @@ class VideoPlayer extends Component {
             if(!this.isInFullScreen())//If is not in full screen any more
             {
                 this.pauseVideo();
-                console.log(this.videoEl.current.paused);
+                this.videoOnTimeUpdateHandler();
                 document.removeEventListener('fullscreenchange', () => {this.exitFullScreenMode()});
                 document.removeEventListener('mozfullscreenchange', () => {this.exitFullScreenMode()});
                 document.removeEventListener('webkitfullscreenchange', () => {this.exitFullScreenMode()});
@@ -171,6 +175,18 @@ class VideoPlayer extends Component {
 
     videoOnEnded = () => {
         console.log("teste");
+    }
+
+    videoOnTimeUpdateHandler = () => {
+        let newTimePercent = this.videoEl.current.currentTime * 100 / this.videoEl.current.duration;
+        newTimePercent = newTimePercent.toFixed(2);
+        this.setState({timePercent:newTimePercent});
+    }
+    
+    setVideoNewTimeByPercent = (percent) => {
+        let newTimePercent = this.videoEl.current.duration * (percent / 100);
+        this.videoEl.current.currentTime = newTimePercent;
+        this.videoOnTimeUpdateHandler();
     }
     
     render(){
@@ -193,9 +209,14 @@ class VideoPlayer extends Component {
                     onCanPlay={this.videoOnCanPlayHandler}
                     onPlay={this.videoOnPlayHandler}
                     onPause={this.videoOnPauseHandler}
+                    onTimeUpdate={this.videoOnTimeUpdateHandler}
                     onEnded={this.videoOnEnded}
                     >
-                </video>                
+                </video>     
+                <VideoProgressBar
+                    barStatus={this.state.videoStatus}
+                    timePercent={this.state.timePercent}
+                    setVideoNewTimeByPercent={this.setVideoNewTimeByPercent}/>
                 <VideoImagePreview
                     previewOn={this.state.previewStatus}
                     videoPosterUrl={this.props.videoPosterUrl}/>
