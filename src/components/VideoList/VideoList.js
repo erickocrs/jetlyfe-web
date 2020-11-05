@@ -63,7 +63,9 @@ class VideoList extends Component {
                             )})
                         : null }
                     </div>   
-                    <h3 className="video-list-title">#trance</h3>
+                    <h3 className="video-list-title">
+                        { this.props.videoListArray ? this.props.videoListArray.tag : "" }
+                    </h3>
                 </ScrollSauce>
             </div>
         );

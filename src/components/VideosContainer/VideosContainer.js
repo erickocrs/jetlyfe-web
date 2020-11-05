@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styled from 'styled-components'
 import ScrollSauce from '../ScrollSauce/ScrollSauce'
@@ -24,7 +23,6 @@ const VideosContainer = () => {
       setCurrentListPlaying ,
       getCurrentListPlaying 
     }
-
 
     React.useEffect(() => {
       
@@ -54,10 +52,8 @@ const VideosContainer = () => {
       fetch('/sampleData.json')
       .then(function(response) {
         response.json().then(data => {
-
-          setVideosLists(data.lists);
-          // do something with your data
-          console.log(data);
+          if(data.lists)
+          { setVideosLists(data.lists) }
         });
       })
     }
@@ -81,7 +77,7 @@ const VideosContainer = () => {
                       videoListArray={videoList}
                       selected={i === 1 ? true : false }/>
                   );
-                })} 
+                })}
               </Container>
           </ScrollSauce>
         </div>

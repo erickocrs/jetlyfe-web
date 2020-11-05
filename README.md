@@ -1,3 +1,32 @@
+#Tasks
+
+[||||||] ...
+[||||||] get tag from json
+[||||--] video controls (progress bar)
+[------] `system` video crud (tags)
+[------] `system` like
+[------] `system` comments
+[------] `system` views
+[------] `system` users (login, register)
+[------] logo
+[------] search
+[------] browser zoom (ctr +) bug
+[------] ...
+
+
+
+
+
+
+
+
+
+
+
+##########################################################################################################
+## React ##
+##########################################################################################################
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
