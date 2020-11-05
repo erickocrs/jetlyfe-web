@@ -1,0 +1,9 @@
+
+.container{
+    display: block;
+    width: 100%;
+    height:calc(100% - 40px);
+    box-sizing: content-box; /* So the width will be 100% + 17px */
+  
+    overflow: hidden;
+  }

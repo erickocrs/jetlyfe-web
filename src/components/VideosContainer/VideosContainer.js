@@ -1,9 +1,14 @@
 
 import React from 'react';
+import styled from 'styled-components'
 import ScrollSauce from '../ScrollSauce/ScrollSauce'
 import VideoList from '../VideoList/VideoList'
+import './VideosContainer.scss';
 
 const VideosContainer = () => {
+
+  const [videosLists, setVideosLists] = React.useState([]);
+  const [containerWidth, setContainerWidth] = React.useState(null);
 
     let currentVideoPlaying = false;
     const setCurrentVideoPlaying = (newVideo) => {currentVideoPlaying = newVideo;}
@@ -20,16 +25,30 @@ const VideosContainer = () => {
       getCurrentListPlaying 
     }
 
+
     React.useEffect(() => {
       
       loadVideosLists();
-
       return () => {
         //cleanup
       }
     }, []);
 
-    const [videosLists, setVideosLists] = React.useState([]);
+    React.useEffect(() => {
+      let newWidth = 0;
+      videosLists.map((item, i) => {
+        if(
+          item.reference &&
+          item.reference.current &&
+          item.reference.current.videoList &&
+          item.reference.current.videoList.current &&
+          item.reference.current.videoList.current.clientWidth )
+        {
+          newWidth += item.reference.current.videoList.current.clientWidth;
+        }
+      });
+      setContainerWidth(newWidth);
+    }, [videosLists]);
 
     const loadVideosLists = () => {
       fetch('/sampleData.json')
@@ -49,20 +68,28 @@ const VideosContainer = () => {
           <ScrollSauce
             vertical={false}
             horizontal={true}>
-              <div
+              <Container
+              width={containerWidth}
               className={`container-lists`}>
                 { videosLists.map((videoList, i) => {
+                  let videoListRef = React.createRef();
+                  videoList.reference = videoListRef;
                   return (
                     <VideoList
+                      ref={videoListRef}
                       {...videoListFunctions}
                       videoListArray={videoList}
                       selected={i === 1 ? true : false }/>
                   );
-                }) }
-              </div>
+                })} 
+              </Container>
           </ScrollSauce>
         </div>
     )
 }
+
+const Container = styled.div`
+  width:${(props) => props.width ? props.width + "px": "20000vw"}
+`;
 
 export default VideosContainer;

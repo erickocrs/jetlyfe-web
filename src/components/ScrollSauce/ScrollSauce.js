@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import ScrollContainer from 'react-indiana-drag-scroll'
+import './ScrollSauce.scss';
 
 export const ScrollSauce = (props) => {
 
