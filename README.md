@@ -1,16 +1,27 @@
 #Tasks
 
 [||||||] ...
+
 [||||||] get tag from json
+
 [||||--] video controls (progress bar)
+
 [------] `system` video crud (tags)
+
 [------] `system` like
+
 [------] `system` comments
+
 [------] `system` views
+
 [------] `system` users (login, register)
+
 [------] logo
+
 [------] search
+
 [------] browser zoom (ctr +) bug
+
 [------] ...
 
 
