@@ -6,7 +6,9 @@
 
 [|||||-] video controls
 
-[------] video on ended play the next
+[||||||] video on ended play the next
+
+[------] video on play go to the top
 
 [------] video details on mobile (small text)
 
@@ -27,6 +29,8 @@
 [------] search
 
 [------] `bug` browser zoom (ctr +)
+
+[------] `bug` browser resize list broken
 
 [------] ...
 

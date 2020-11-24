@@ -174,7 +174,7 @@ class VideoPlayer extends Component {
     }
 
     videoOnEnded = () => {
-        console.log("teste");
+        this.props.playNextVideo(this.props.videoItemIndex);
     }
 
     videoOnTimeUpdateHandler = () => {
@@ -188,7 +188,11 @@ class VideoPlayer extends Component {
         this.videoEl.current.currentTime = newTimePercent;
         this.videoOnTimeUpdateHandler();
     }
-    
+
+    componentDidMount() {
+        this.props.videoItem.VideoPlayer = this;
+    }
+
     render(){
         return (
             <VideoBox

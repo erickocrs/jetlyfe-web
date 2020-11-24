@@ -48,7 +48,7 @@ const LineBox = styled.div`
     width:100%;
     height:50px;
     transform:translate(${props => props.timePercent ? props.timePercent + "%" : "0" }, 0px);
-    transition:all 500ms ease;
+    transition:all 50ms ease-in-out;
 `;
 
 const LineBefore = styled.div`
@@ -58,7 +58,7 @@ const LineBefore = styled.div`
     top:auto; bottom:0;
     left:-100%;
     height:0px;    
-    border-top:3px solid rgba(0,0,0,.4);
+    border-top:10px solid rgba(0,0,0,.7);
     box-shadow:0px 0px 1px 1px rgba(255,255,255,0.02);
 `;
 
@@ -69,7 +69,7 @@ const Line = styled.div`
     left:0;
     width:100%;
     height:0px;    
-    border-top:3px solid rgba(0,0,0,.08);
+    border-top:10px solid rgba(0,0,0,.08);
     box-shadow:0px 0px 1px 1px rgba(255,255,255,0.02);
 `;
 

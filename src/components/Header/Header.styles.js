@@ -53,6 +53,17 @@ export const ButtonSearch = styled.div`
     cursor:pointer;
 `;
 
+export const ButtonMyAccount = styled.div`
+    position:relative;
+    display:block;
+    float:right;
+    background:rgba(70,15,200,1);
+    width:40px;
+    height:${SearchHeight};
+    cursor:pointer;
+
+`;
+
 export const InputSearch = styled.input`
     position:relative;
     display:block;

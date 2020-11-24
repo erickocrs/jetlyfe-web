@@ -43,6 +43,14 @@ class VideoList extends Component {
     unsetSelect(){  
         this.setState({selectedClass : ""}) 
     }
+
+    playNextVideo(videoItemIndex){
+        console.log(this);
+        if(this.videoListArray.list[videoItemIndex + 1])
+        {
+            this.videoListArray.list[videoItemIndex + 1].VideoPlayer.playVideo();
+        }
+    }
     
     render(){
         return (        
@@ -56,10 +64,13 @@ class VideoList extends Component {
                             <VideoPlayer 
                                 {...this.props}
                                 videoList={ this }
+                                videoItem={videoItem}
+                                videoItemIndex={i}
                                 videoTitle={videoItem.videoTitle}
                                 videoUrl={videoItem.videoUrl}
                                 videoPosterUrl={videoItem.videoPosterUrl}
-                                views={videoItem.views}/>
+                                views={videoItem.views}
+                                playNextVideo={this.playNextVideo}/>
                             )})
                         : null }
                     </div>   
