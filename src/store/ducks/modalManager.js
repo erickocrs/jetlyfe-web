@@ -1,13 +1,15 @@
   export const INITIAL_STATE = {
-    modalMyAccount: false,    
+    modalMyAccount: false,
+    modalNewVideo: false,
   };
   
   export default function modalManagerReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
-      case "SET_MODAL_MY_ACCOUNT": 
+      case "SET_MODAL": 
         return {
           ...state,
-          modalMyAccount: action.modalMyAccount
+          modalMyAccount: action.modalMyAccount,
+          modalNewVideo: action.modalNewVideo
         }
       default:
         return state;

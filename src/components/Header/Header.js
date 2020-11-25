@@ -7,6 +7,7 @@ import {
     Search,
     ButtonSearch,
     ButtonMyAccount,
+    ButtonNewVideo,
     InputSearch
 } from './Header.styles.js'
 import { useDispatch } from "react-redux";
@@ -14,10 +15,17 @@ import { useDispatch } from "react-redux";
 export default function Header() {
     const dispatch = useDispatch();
 
-    const ButtonMyAccountClick = () => {
+    const handlerClickButtonMyAccount = () => {
         dispatch({
-            type: "SET_MODAL_MY_ACCOUNT",
+            type: "SET_MODAL",
             modalMyAccount : true
+        });
+    };
+
+    const handlerClickButtonMyNewVideo = () => {
+        dispatch({
+            type: "SET_MODAL",
+            modalNewVideo : true
         });
     };
 
@@ -27,9 +35,9 @@ export default function Header() {
                 <LogoImage src={"./logo.svg"}></LogoImage>
             </Logo>
             <ButtonMyAccount
-                onClick={ButtonMyAccountClick}/>
+                onClick={handlerClickButtonMyAccount}/>
             <ButtonNewVideo
-                onClick={}/>
+                onClick={handlerClickButtonMyNewVideo}/>
             <Search>
                 <InputSearch type="text"/>
                 <ButtonSearch/>  

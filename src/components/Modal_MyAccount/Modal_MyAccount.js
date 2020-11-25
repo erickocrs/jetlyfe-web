@@ -4,8 +4,8 @@ import {  useSelector } from "react-redux";
 
 export const MyAccount_Modal = () => {
 
-    const modalMyAccountReducer = useSelector((state) => state.modalManagerReducer);
-    const [modalActive, setModalActive] = React.useState(modalMyAccountReducer.modalMyAccount);
+    const modalManagerReducer = useSelector((state) => state.modalManagerReducer);
+    const [modalActive, setModalActive] = React.useState(modalManagerReducer.modalMyAccount);
 
     const openModal = () => {
         setModalActive(true);
@@ -16,8 +16,8 @@ export const MyAccount_Modal = () => {
     }
 
     React.useEffect(() => {
-        setModalActive(modalMyAccountReducer.modalMyAccount);
-    }, [modalMyAccountReducer])
+        setModalActive(modalManagerReducer.modalMyAccount);
+    }, [modalManagerReducer])
 
     return (
         <Container

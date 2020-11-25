@@ -6,7 +6,8 @@ import VideosContainer from './components/VideosContainer/VideosContainer'
 
 import Header from './components/Header/Header'
 import './App.scss'
-import MyAccount_Modal from 'components/MyAccount_Modal/MyAccount_Modal'
+import Modal_MyAccount from 'components/Modal_MyAccount/Modal_MyAccount'
+import Modal_NewVideo from 'components/Modal_NewVideo/Modal_NewVideo'
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
         <div className="App">
           <Header/>
           <VideosContainer/>
-          <MyAccount_Modal/>
+          
+          <Modal_MyAccount/>
+          <Modal_NewVideo/>
         </div>
       </PersistGate>
     </Provider>
