@@ -75,7 +75,6 @@ export const ButtonNewVideo = styled.div`
 
 `;
 
-
 export const ButtonLogin = styled.div`
     position:relative;
     display:block;
@@ -87,6 +86,16 @@ export const ButtonLogin = styled.div`
 
 `;
 
+export const ButtonRegister = styled.div`
+    position:relative;
+    display:block;
+    float:right;
+    background:rgba(20,60,255,1);
+    width:40px;
+    height:${SearchHeight};
+    cursor:pointer;
+
+`;
 
 export const InputSearch = styled.input`
     position:relative;

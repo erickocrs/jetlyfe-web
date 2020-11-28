@@ -8,6 +8,7 @@ import API from "services/API";
 export const Form_Login = () => {
 
     const [formData, setFormData] = React.useState({
+        email : { value : "", init : true, validation : Validation.usernameValidation },
         username : { value : "", init : true, validation : Validation.usernameValidation },
         password : { value : "", init : true, validation : Validation.passwordValidation }
     });
@@ -41,6 +42,7 @@ export const Form_Login = () => {
 
         const APIData = {
             user : {
+                email : formData.email.value,
                 username : formData.username.value,
                 password : formData.password.value
             }
@@ -49,7 +51,7 @@ export const Form_Login = () => {
         if(validated)
         {
             API.post(
-                "/users/login",
+                "/users",
                 APIData,
                 (response) => {
 
@@ -65,6 +67,12 @@ export const Form_Login = () => {
     return (
         <Form>
             <Input
+                label="email"
+                type="text"
+                name="email"
+                value={formData.email}
+                onChange={handleFormChange}/>
+            <Input
                 label="username"
                 type="text"
                 name="username"
@@ -78,7 +86,7 @@ export const Form_Login = () => {
                 onChange={handleFormChange}/>
             <Button
                 onClick={handleClickLogin}>
-                Login
+                Register
             </Button>
         </Form>
     );

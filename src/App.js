@@ -10,6 +10,7 @@ import './App.scss'
 import Modal_MyAccount from 'components/Modal_MyAccount/Modal_MyAccount'
 import Modal_NewVideo from 'components/Modal_NewVideo/Modal_NewVideo'
 import Modal_Login from 'components/Modal_Login/Modal_Login'
+import Modal_Register from 'components/Modal_Register/Modal_Register'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Modal_MyAccount/>
           <Modal_NewVideo/>
           <Modal_Login/>
+          <Modal_Register/>
         </div>
       </PersistGate>
     </Provider>

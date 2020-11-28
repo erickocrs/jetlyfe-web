@@ -2,6 +2,7 @@
     modalMyAccount: false,
     modalNewVideo: false,
     modalLogin: false,
+    modalRegister: false,
   };
   
   export default function modalManagerReducer(state = INITIAL_STATE, action) {
@@ -11,7 +12,8 @@
           ...state,
           modalMyAccount: action.modalMyAccount,
           modalNewVideo: action.modalNewVideo,
-          modalLogin: action.modalLogin
+          modalLogin: action.modalLogin,
+          modalRegister: action.modalRegister
         }
       default:
         return state;

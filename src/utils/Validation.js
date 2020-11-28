@@ -29,30 +29,6 @@ export const Validation = {
         else
         { return true; }        
     }
-    ,allFieldsValidation : (user) => {
-        user.username.init = false;
-        user.password.init = false;        
-        if(
-            Validation.usernameValidation(user.username) &&
-            Validation.passwordValidation(user.password)
-        )
-        {return true}
-        else
-        {return false}
-    }
-    ,allFieldsValidationRegister : (user) => {
-        user.name.init = false;
-        user.username.init = false;
-        user.password.init = false;
-        if(
-            Validation.nameValidation(user.name) &&
-            Validation.usernameValidation(user.username) &&
-            Validation.passwordValidation(user.password)
-        )
-        {return true}
-        else
-        {return false}
-    }
 }
 
 export default Validation;

@@ -23,7 +23,7 @@ export const Form_NewVideo = () => {
         );
      }
 
-    const handleSaveVideo = () => {
+    const handleClickSaveVideo = () => {
 
         let newVideoData = videoData;
         Object.entries(videoData).map(([key, value]) => {
@@ -91,7 +91,7 @@ export const Form_NewVideo = () => {
                 value={videoData.tagList}
                 onChange={handleFormChange}/>
             <Button
-                onClick={handleSaveVideo}>
+                onClick={handleClickSaveVideo}>
                 Save
             </Button>
         </Form>
