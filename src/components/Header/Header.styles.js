@@ -75,6 +75,19 @@ export const ButtonNewVideo = styled.div`
 
 `;
 
+
+export const ButtonLogin = styled.div`
+    position:relative;
+    display:block;
+    float:right;
+    background:rgba(10,200,50,1);
+    width:40px;
+    height:${SearchHeight};
+    cursor:pointer;
+
+`;
+
+
 export const InputSearch = styled.input`
     position:relative;
     display:block;

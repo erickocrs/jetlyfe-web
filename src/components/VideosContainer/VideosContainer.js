@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ScrollSauce from '../ScrollSauce/ScrollSauce'
 import VideoList from '../VideoList/VideoList'
 import './VideosContainer.scss';
-import api from 'services/api';
+import API from 'services/API';
 
 const VideosContainer = () => {
 
@@ -50,7 +50,7 @@ const VideosContainer = () => {
     }, [videosLists]);
 
     const loadVideosLists = () => {
-      api.get('/films')
+      API.get('/films')
       .then(function(response){
         console.log("response", response);
         if(response.data && response.data.lists)

@@ -8,6 +8,7 @@ import {
     ButtonSearch,
     ButtonMyAccount,
     ButtonNewVideo,
+    ButtonLogin,
     InputSearch
 } from './Header.styles.js'
 import { useDispatch } from "react-redux";
@@ -29,6 +30,14 @@ export default function Header() {
         });
     };
 
+
+    const handlerClickButtonLogin = () => {
+        dispatch({
+            type: "SET_MODAL",
+            modalLogin : true
+        });
+    };
+
     return (
         <HeaderContainer>
             <Logo href="./">
@@ -38,6 +47,8 @@ export default function Header() {
                 onClick={handlerClickButtonMyAccount}/>
             <ButtonNewVideo
                 onClick={handlerClickButtonMyNewVideo}/>
+            <ButtonLogin
+                onClick={handlerClickButtonLogin}/>
             <Search>
                 <InputSearch type="text"/>
                 <ButtonSearch/>  

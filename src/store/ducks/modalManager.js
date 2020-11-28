@@ -1,6 +1,7 @@
   export const INITIAL_STATE = {
     modalMyAccount: false,
     modalNewVideo: false,
+    modalLogin: false,
   };
   
   export default function modalManagerReducer(state = INITIAL_STATE, action) {
@@ -9,7 +10,8 @@
         return {
           ...state,
           modalMyAccount: action.modalMyAccount,
-          modalNewVideo: action.modalNewVideo
+          modalNewVideo: action.modalNewVideo,
+          modalLogin: action.modalLogin
         }
       default:
         return state;
