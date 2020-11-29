@@ -11,11 +11,8 @@ export const Modal_MyAccount = () => {
 
     const requestUserInfo = () => {
 
-        API.get("/user", {
-            headers: {
-              Authorization: `Bearer ${userReducer.token}`
-            }
-          })
+      if(userReducer.user && userReducer.user.token){
+        API.get("/user")
           .then((res) => {
             console.log(res)
             setMyAccountData(res);
@@ -23,6 +20,11 @@ export const Modal_MyAccount = () => {
           .catch((error) => {
             console.error(error)
           });
+      }
+      else{
+        
+        setMyAccountData("");
+      }
     }
 
     React.useEffect(() => {

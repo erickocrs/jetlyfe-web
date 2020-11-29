@@ -97,6 +97,16 @@ export const ButtonRegister = styled.div`
 
 `;
 
+export const ButtonLogout = styled.div`
+    position:relative;
+    display:block;
+    float:right;
+    background:rgba(15,150,150,1);
+    width:40px;
+    height:${SearchHeight};
+    cursor:pointer;
+`;
+
 export const InputSearch = styled.input`
     position:relative;
     display:block;

@@ -14,6 +14,7 @@ import Modal_Register from 'components/Modal_Register/Modal_Register'
 
 function App() {
 
+  
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

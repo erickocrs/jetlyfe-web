@@ -10,13 +10,16 @@ import {
     ButtonNewVideo,
     ButtonLogin,
     ButtonRegister,
+    ButtonLogout,
     InputSearch
 } from './Header.styles.js'
 import { useDispatch } from "react-redux";
+import { APISetToken }  from "services/API";
 
 export default function Header() {
+    
     const dispatch = useDispatch();
-
+    
     const handlerClickButtonMyAccount = () => {
         dispatch({
             type: "SET_MODAL",
@@ -31,7 +34,6 @@ export default function Header() {
         });
     };
 
-
     const handlerClickButtonLogin = () => {
         dispatch({
             type: "SET_MODAL",
@@ -43,6 +45,14 @@ export default function Header() {
         dispatch({
             type: "SET_MODAL",
             modalRegister : true
+        });
+    };
+
+    const handlerClickLogOut = () => {   
+        APISetToken(null);
+        dispatch({
+            type: "SET_USER",
+            user : null
         });
     };
 
@@ -59,6 +69,8 @@ export default function Header() {
                 onClick={handlerClickButtonLogin}/>
             <ButtonRegister
                 onClick={handlerClickButtonRegister}/>
+            <ButtonLogout
+                onClick={handlerClickLogOut}/>
             <Search>
                 <InputSearch type="text"/>
                 <ButtonSearch/>  

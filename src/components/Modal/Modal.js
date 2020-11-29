@@ -1,18 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import {  useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export const Modal = (props) => {
+    const dispatch = useDispatch();
 
     const modalManagerReducer = useSelector((state) => state.modalManagerReducer);
     const [modalActive, setModalActive] = React.useState(modalManagerReducer[props.modal]);    
 
     const openModal = () => {
         setModalActive(true);
+        dispatch({
+            type: "SET_MODAL",
+            [props.modal] : true
+        });
     }
 
     const closeModal = () => {        
-        setModalActive(false);
+        setModalActive(false);        
+        dispatch({
+            type: "SET_MODAL",
+            [props.modal] : false
+        });
     }
     
     React.useEffect(() => {

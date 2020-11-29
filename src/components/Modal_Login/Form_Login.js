@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "components/_Elements/Button/Button"
 import Input from "components/_Elements/Input/Input"
 import Validation from '../../utils/Validation';
-import API from "services/API";
+import { API, APISetToken } from "services/API";
 import { useDispatch } from "react-redux";
 
 export const Form_Login = () => {
@@ -55,12 +55,13 @@ export const Form_Login = () => {
             .then((res) => {
                 console.log("response", res);
                 if(res.data && res.data.user && res.data.user.token)
-                {                           
+                {              
+                    APISetToken(res.data.user.token);
                     dispatch({
                         type: "SET_USER",
                         user : res.data.user,
                         token : res.data.user.token
-                    });
+                    });       
                 }
             });
         }

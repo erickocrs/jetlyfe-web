@@ -1,6 +1,5 @@
 const INITIAL_STATE = {
-    user: {},    
-    token: null
+    user: {}
   };
   
   export default function userReducer(state = INITIAL_STATE, action) {
@@ -8,14 +7,8 @@ const INITIAL_STATE = {
       case 'SET_USER': 
         return {
           ...state,
-          user: action.user,
-          token: action.token
+          user: action.user
         };
-      case "SET_CURRENT_TOKEN": 
-        return {
-          ...state,
-          token: action.token
-        }
       default:
         return state;
     }
