@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {  useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import {  useDispatch, useSelector } from "react-redux";
 
 export const Modal = (props) => {
     const dispatch = useDispatch();

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {  useSelector } from "react-redux";
 
 export const API = axios.create({
     baseURL: 'http://localhost:3000/api/',
@@ -8,12 +7,16 @@ export const API = axios.create({
 
 export const APISetToken = (newToken) => {
   
-  const newAuthorizationHeader = newToken ? `Bearer ${newToken}` : "";
-
-  API.interceptors.request.use(function (config) {                        
-      config.headers.Authorization = newAuthorizationHeader;
-      return config;
-  });  
+  if(newToken){
+    const newAuthorizationHeader = `Bearer ${newToken}`;
+    console.log("newToken", newToken)
+    console.log("newAuthorizationHeader", newAuthorizationHeader)
+    
+    API.interceptors.request.use(function (config) {                        
+        config.headers.Authorization = newAuthorizationHeader;
+        return config;
+    });  
+  }
 }
 
 export default API;

@@ -57,6 +57,7 @@ export const Form_Login = () => {
                 if(res.data && res.data.user && res.data.user.token)
                 {              
                     APISetToken(res.data.user.token);
+                    
                     dispatch({
                         type: "SET_USER",
                         user : res.data.user,

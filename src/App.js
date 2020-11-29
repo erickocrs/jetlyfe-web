@@ -12,9 +12,9 @@ import Modal_NewVideo from 'components/Modal_NewVideo/Modal_NewVideo'
 import Modal_Login from 'components/Modal_Login/Modal_Login'
 import Modal_Register from 'components/Modal_Register/Modal_Register'
 
+
 function App() {
 
-  
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

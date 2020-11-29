@@ -42,9 +42,19 @@ export const Form_NewVideo = () => {
         console.log("validated", validated);
         console.log("videoData", newVideoData);
 
+        const APIData = {
+            film : {
+                title : videoData.title.value,
+                videoUrl : videoData.videoFile.value,
+                videoCustomUrlTitle : videoData.customUrlTitle.value,
+                description : videoData.description.value,
+                tagList : videoData.tagList.value
+            }
+        }
+
         if(validated)
         {
-            API.post("/films", { film : videoData })
+            API.post("/films", APIData)
             .then((response) => {
                 console.log("response", response);
             });
