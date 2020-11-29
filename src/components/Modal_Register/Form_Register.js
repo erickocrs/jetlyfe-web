@@ -4,8 +4,11 @@ import Button from "components/_Elements/Button/Button"
 import Input from "components/_Elements/Input/Input"
 import Validation from '../../utils/Validation';
 import API from "services/API";
+import { useDispatch } from "react-redux";
 
 export const Form_Login = () => {
+    
+    const dispatch = useDispatch();
 
     const [formData, setFormData] = React.useState({
         email : { value : "", init : true, validation : Validation.usernameValidation },
@@ -50,12 +53,17 @@ export const Form_Login = () => {
 
         if(validated)
         {
-            API.post(
-                "/users",
-                APIData,
-                (response) => {
-
-                    console.log("response", response);
+            API.post("/users", APIData)
+            .then((res) => {
+                console.log("response", res);
+                if(res.data && res.data.user && res.data.user.token)
+                {                        
+                    dispatch({
+                        type: "SET_USER",
+                        user : res.data.user,
+                        token : res.data.user.token
+                    });
+                }
             });
         }
         else
