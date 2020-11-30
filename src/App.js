@@ -13,6 +13,9 @@ import Modal_Login from 'components/Modal_Login/Modal_Login'
 import Modal_Register from 'components/Modal_Register/Modal_Register'
 
 
+import Toast from 'components/Toast/Toast'
+
+
 function App() {
 
   return (
@@ -26,6 +29,8 @@ function App() {
           <Modal_NewVideo/>
           <Modal_Login/>
           <Modal_Register/>
+
+          <Toast/>
         </div>
       </PersistGate>
     </Provider>

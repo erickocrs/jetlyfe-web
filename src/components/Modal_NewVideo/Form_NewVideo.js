@@ -4,8 +4,10 @@ import Button from "components/_Elements/Button/Button"
 import Input from "components/_Elements/Input/Input"
 import Validation from '../../utils/Validation';
 import API from "services/API";
+import { useToast } from "components/Toast/Toast"
 
 export const Form_NewVideo = () => {
+    const toast = useToast();
 
     const [videoData, setVideoData] = React.useState({
         title : { value : "", init : true, validation : Validation.usernameValidation },
@@ -24,6 +26,7 @@ export const Form_NewVideo = () => {
      }
 
     const handleClickSaveVideo = () => {
+        toast("Test message");
 
         let newVideoData = videoData;
         Object.entries(videoData).map(([key, value]) => {
@@ -38,22 +41,19 @@ export const Form_NewVideo = () => {
         });
 
         setVideoData(newVideoData);
-        
-        console.log("validated", validated);
-        console.log("videoData", newVideoData);
-
-        const APIData = {
-            film : {
-                title : videoData.title.value,
-                videoUrl : videoData.videoFile.value,
-                videoCustomUrlTitle : videoData.customUrlTitle.value,
-                description : videoData.description.value,
-                tagList : videoData.tagList.value
-            }
-        }
 
         if(validated)
-        {
+        {    
+            const APIData = {
+                film : {
+                    title : videoData.title.value,
+                    videoUrl : videoData.videoFile.value,
+                    videoCustomUrlTitle : videoData.customUrlTitle.value,
+                    description : videoData.description.value,
+                    tagList : videoData.tagList.value
+                }
+            }
+
             API.post("/films", APIData)
             .then((response) => {
                 console.log("response", response);
