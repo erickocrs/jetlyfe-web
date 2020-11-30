@@ -1,51 +1,25 @@
 ## Tasks
 
-[||||||] ...
+- [x]  get tag from json
+- [x]  video controls
+- [x]  video on ended play the next
+- [x]  video on play go to the top
+- [x]  video details on mobile (small text)
+- [ ]  search
+- [ ]  url
 
-[||||||] get tag from json
+- [x]  `system` users (login, register)
+- [ ]  `system` video crud (tags)
+- [ ]  `system` like
+- [ ]  `system` comments
+- [ ]  `system` views
 
-[|||||-] video controls
+- [ ]  `bug` browser zoom (ctr +)
+- [ ]  `bug` browser resize list broken
 
-[||||||] video on ended play the next
-
-[------] video on play go to the top
-
-[------] video details on mobile (small text)
-
-[------] `system` video crud (tags)
-
-[------] `system` like
-
-[------] `system` comments
-
-[------] `system` views
-
-[------] `system` users (login, register)
-
-[------] url
-
-[------] logo
-
-[------] search
-
-[------] `bug` browser zoom (ctr +)
-
-[------] `bug` browser resize list broken
-
-[------] ...
-
-
-
-
-
-
-
-
-
-
+- [ ]  logo
 
 ## React ##
-########################################################
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
