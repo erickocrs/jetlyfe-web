@@ -1,6 +1,6 @@
 
-import React from "react";
-import FormRow from "components/_Elements/FormRow/FormRow"
+import React from 'react'
+import FormRow from 'components/_Elements/FormRow/FormRow'
 
 export const Input = (props) => {
     return (        
@@ -12,6 +12,8 @@ export const Input = (props) => {
                 name={props.name}
                 value={props.value.value}
                 onChange={props.onChange}/>
+                
+            
         </FormRow>
     )
 }

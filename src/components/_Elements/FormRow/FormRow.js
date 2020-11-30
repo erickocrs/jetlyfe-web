@@ -5,11 +5,20 @@ export default function FormRow(props) {
 
     return (
         <Row 
-            validation={props.validation === false ? false : true}>
+            validation={props.validation === true ? true : false}>
             {props.children}
+
+            { props.validation !== false ?
+                <Error>{props.validation}</Error>
+            : null }
         </Row>
     );
 }
+
+
+const Error = styled.label`
+    color:red;
+`;
 
 const Row = styled.div`
     width:100%;

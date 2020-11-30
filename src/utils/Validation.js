@@ -15,8 +15,8 @@ export const Validation = {
         if(username.init)
         { return true }
 
-        if(!username.value || (username.value && username.value.length < 1 ))
-        { return false; }
+        if(!username.value || (username.value && username.value.length < 4 ))
+        { return "username less thne 3"; }
         else
         { return true; }        
     },

@@ -11,8 +11,8 @@ export const Form_Login = () => {
     const dispatch = useDispatch();
 
     const [formData, setFormData] = React.useState({
-        username : { value : "", init : true, validation : Validation.usernameValidation },
-        password : { value : "", init : true, validation : Validation.passwordValidation }
+        username : { value : "", init : true, validation : Validation.usernameValidation, error : false },
+        password : { value : "", init : true, validation : Validation.passwordValidation, error : false }
     });
     
     const handleFormChange = (e) => {
@@ -32,8 +32,16 @@ export const Form_Login = () => {
 
         let validated = true;
         Object.entries(newFormData).map(([key, value]) => {
-            if(newFormData[key].validation(value) === false) {
+            const validationResult = newFormData[key].validation(value);
+
+            if(validationResult !== true) {
+
+                console.log(validationResult);
                 validated = false;
+
+                newFormData = {...newFormData, [key] : { ...value, error : validationResult } };
+
+
             }
         });
 

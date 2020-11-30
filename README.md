@@ -7,8 +7,9 @@
 - [x]  video details on mobile (small text)
 - [ ]  search
 - [ ]  url
-- [ ]  validation error msg
-- [ ]  toast error msg
+- [x]  validation error msg
+- [x]  toast error msg
+- [ ]  upload video (with progress)
 
 - [x]  `system` users (login, register)
 - [ ]  `system` video crud (tags)
