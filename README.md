@@ -9,7 +9,7 @@
 - [ ]  url
 - [x]  validation error msg
 - [x]  toast error msg
-- [ ]  upload video (with progress)
+- [10%]  upload video (with progress)
 
 - [x]  `system` users (login, register)
 - [ ]  `system` video crud (tags)

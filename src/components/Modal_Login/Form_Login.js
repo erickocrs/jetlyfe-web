@@ -13,14 +13,14 @@ export const Form_Login = () => {
     const [formData, setFormData] = React.useState({
         username : { value : "", init : true, validation : Validation.usernameValidation, error : false },
         password : { value : "", init : true, validation : Validation.passwordValidation, error : false }
-    });
+    })
     
     const handleFormChange = (e) => {
         setFormData({
                  ...formData,
                 [e.target.name] : { ...formData[e.target.name], value : e.target.value, init : false }
              }
-        );
+        )
      }
 
     const handleClickLogin = () => {
@@ -38,10 +38,7 @@ export const Form_Login = () => {
 
                 console.log(validationResult);
                 validated = false;
-
                 newFormData = {...newFormData, [key] : { ...value, error : validationResult } };
-
-
             }
         });
 
@@ -57,8 +54,8 @@ export const Form_Login = () => {
             }
         };
 
-        if(validated)
-        {
+        if(validated) {
+
             API.post("/users/login", APIData)
             .then((res) => {
                 console.log("response", res);
@@ -74,8 +71,8 @@ export const Form_Login = () => {
                 }
             });
         }
-        else
-        {
+        else {
+
             return false;
         }        
     }

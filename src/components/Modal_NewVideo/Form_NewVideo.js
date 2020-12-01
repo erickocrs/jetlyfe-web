@@ -11,7 +11,7 @@ export const Form_NewVideo = () => {
 
     const [videoData, setVideoData] = React.useState({
         title : { value : "", init : true, validation : Validation.usernameValidation },
-        videoFile : { value : null, init : true, validation : Validation.usernameValidation },
+        videoFile : { value : null, file: null, init : true, validation : () => { return true } },
         customUrlTitle : { value : "", init : true, validation : Validation.usernameValidation },
         description : { value : "", init : true, validation : Validation.usernameValidation },
         tagList : { value : [], init : true, validation : Validation.usernameValidation },
@@ -24,6 +24,16 @@ export const Form_NewVideo = () => {
              }
         );
      }
+
+     const handleFormFileChange = (e) => {
+         
+        setVideoData({
+                 ...videoData,
+                [e.target.name] : { ...videoData[e.target.name], file : e.target.files[0] }
+             }
+        );
+
+     }     
 
     const handleClickSaveVideo = () => {
         toast("Test message");
@@ -47,7 +57,6 @@ export const Form_NewVideo = () => {
             const APIData = {
                 film : {
                     title : videoData.title.value,
-                    videoUrl : videoData.videoFile.value,
                     videoCustomUrlTitle : videoData.customUrlTitle.value,
                     description : videoData.description.value,
                     tagList : videoData.tagList.value
@@ -57,6 +66,21 @@ export const Form_NewVideo = () => {
             API.post("/films", APIData)
             .then((response) => {
                 console.log("response", response);
+                    
+
+                if( response.data &&
+                    response.data.article &&
+                    response.data.article.slug )
+                {
+                    const formData = new FormData(); 
+                    formData.append('file', videoData.videoFile.file);
+
+                    API.put(`/films/${response.data.article.slug}/uploadfilm`, formData)
+                    .then((response) => {
+                        console.log("response2", response);
+                    });
+                }
+
             });
         }
         else
@@ -78,7 +102,7 @@ export const Form_NewVideo = () => {
                 type="file"
                 name="videoFile"
                 value={videoData.videoFile}
-                onChange={handleFormChange}/>
+                onChange={handleFormChange,handleFormFileChange}/>
             <Input
                 label="Custom Url Title"
                 type="text"
