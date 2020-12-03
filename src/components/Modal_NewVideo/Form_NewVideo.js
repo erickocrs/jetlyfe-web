@@ -65,8 +65,7 @@ export const Form_NewVideo = () => {
 
             API.post("/films", APIData)
             .then((response) => {
-                console.log("response", response);
-                    
+                console.log("response", response);                    
 
                 if( response.data &&
                     response.data.article &&
@@ -75,7 +74,12 @@ export const Form_NewVideo = () => {
                     const formData = new FormData(); 
                     formData.append('file', videoData.videoFile.file);
 
-                    API.put(`/films/${response.data.article.slug}/uploadfilm`, formData)
+                    API.put(`/films/${response.data.article.slug}/uploadfilm`, formData, {
+                        onUploadProgress : e => {
+                            const progress = parseInt(Math.round((e.loaded * 100) / e.total));
+                            console.log("progress", progress, "%");
+                        }
+                    })
                     .then((response) => {
                         console.log("response2", response);
                     });

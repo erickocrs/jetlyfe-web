@@ -5,17 +5,18 @@
 - [x]  video on ended play the next
 - [x]  video on play go to the top
 - [x]  video details on mobile (small text)
-- [ ]  search
-- [ ]  url
 - [x]  validation error msg
 - [x]  toast error msg
-- [10%]  upload video (with progress)
+- [x]  upload video (with progress)
+- [x]  search
+- [ ]  url 
 
+- [x]  `system` video crud (tags)
 - [x]  `system` users (login, register)
-- [ ]  `system` video crud (tags)
+- [ ]  `system` views
+
 - [ ]  `system` like
 - [ ]  `system` comments
-- [ ]  `system` views
 
 - [ ]  `bug` browser zoom (ctr +)
 - [ ]  `bug` browser resize list broken

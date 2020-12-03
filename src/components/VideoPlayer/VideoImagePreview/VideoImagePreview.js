@@ -26,6 +26,7 @@ const ImagePreview = styled.div`
 
     background:rgba(29,29,29,1) no-repeat center center;
     background-image : ${(props) => (`url('${ ( process.env.PUBLIC_URL + props.videoPosterUrl ) }')`)};
+    background-image:url("http://localhost:3000/tmp/uploads/739fe381c6abea2ce8706422fb22fe81");
     background-size:cover;
     opacity:${(props) => props.previewOn ? 1 : 0};
 `;

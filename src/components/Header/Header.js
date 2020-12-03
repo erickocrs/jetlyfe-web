@@ -1,21 +1,20 @@
 import React from 'react';
 import styled from 'styled-components'
+import { useDispatch } from "react-redux";
+import { APISetToken }  from "services/API";
+import {  useSelector } from 'react-redux'
 import {
     HeaderContainer,
     Logo,
     LogoImage,
-    Search,
-    ButtonSearch,
     ButtonMyAccount,
     ButtonNewVideo,
     ButtonLogin,
     ButtonRegister,
-    ButtonLogout,
-    InputSearch
+    ButtonLogout
 } from './Header.styles.js'
-import { useDispatch } from "react-redux";
-import { APISetToken }  from "services/API";
-import {  useSelector } from 'react-redux'
+
+import { Search } from 'components/Search/Search.js';
 
 export default function Header() {
         
@@ -92,10 +91,7 @@ export default function Header() {
                 onClick={handlerClickButtonRegister}/>
             <ButtonLogout
                 onClick={handlerClickLogOut}/>
-            <Search>
-                <InputSearch type="text"/>
-                <ButtonSearch/>  
-            </Search>
+            <Search/>
         </HeaderContainer>
     );
 }

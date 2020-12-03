@@ -34,25 +34,6 @@ export const LogoImage = styled.img`
 
 const SearchHeight = "40px";
 
-export const Search = styled.div`
-    position:relative;
-    display:table;
-    float:right;
-    margin:0px auto;
-    width:auto;
-    height:${SearchHeight};
-`;
-
-export const ButtonSearch = styled.div`
-    position:relative;
-    display:block;
-    float:left;
-    background:rgba(0,0,0,.01);
-    width:40px;
-    height:${SearchHeight};
-    cursor:pointer;
-`;
-
 export const ButtonMyAccount = styled.div`
     position:relative;
     display:block;
@@ -105,14 +86,4 @@ export const ButtonLogout = styled.div`
     width:40px;
     height:${SearchHeight};
     cursor:pointer;
-`;
-
-export const InputSearch = styled.input`
-    position:relative;
-    display:block;
-    float:left;
-    height:${SearchHeight};
-    background:rgba(255,255,255,.05);
-    color:#ffffff;
-    padding:0px 15px;
 `;

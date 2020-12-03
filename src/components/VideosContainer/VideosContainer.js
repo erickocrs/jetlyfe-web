@@ -4,6 +4,7 @@ import ScrollSauce from '../ScrollSauce/ScrollSauce'
 import VideoList from '../VideoList/VideoList'
 import './VideosContainer.scss';
 import API from 'services/API';
+import {  useSelector } from "react-redux";
 
 const VideosContainer = () => {
 
@@ -33,6 +34,18 @@ const VideosContainer = () => {
       }
     }, []);
 
+    
+    const searchReducer = useSelector((state) => state.searchReducer);
+
+    React.useEffect(() => {
+      
+      loadVideosLists(searchReducer.search);
+      return () => {
+        //cleanup
+      }
+    }, [searchReducer]);
+
+
     React.useEffect(() => {
       let newWidth = 0;
       videosLists.map((item, i) => {
@@ -49,8 +62,20 @@ const VideosContainer = () => {
       setContainerWidth(newWidth);
     }, [videosLists]);
 
-    const loadVideosLists = () => {
-      API.get('/films')
+    const loadVideosLists = (searchValue = null) => {
+
+      let APIData = {};
+
+      if(searchValue) {
+
+        APIData = {
+          params: { 
+            search : searchValue
+           }
+        };
+      };
+
+      API.get('/films', APIData)
       .then(function(response){
         console.log("response", response);
         if(response.data && response.data.lists)
